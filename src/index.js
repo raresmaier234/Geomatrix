@@ -3,8 +3,6 @@ import { gameplayStage } from './screens/gameplay'
 import { menuStage } from './screens/menu'
 import { gameOverStage } from './screens/gameover';
 import { gameFinishedStage } from './screens/gamefinish';
-import { count } from './screens/gameplay';
-
 
 //key care reprezinta scenele jocului
 export const GAMEPLAYSTAGE_KEY = "GameplayStage";
