@@ -68,7 +68,7 @@ export const gameOver = (map, lastPlayeri, lastPlayerj, changeStage, count) => {
                     ok = 0;
             }
     if (ok) {
-        if (count > 5)
+        if (count > 4)
             changeStage(GAMEOVERSTAGE_KEY);
         else
             changeStage(GAMEFINISHEDSTAGE_KEY);
