@@ -1,9 +1,6 @@
 import * as PIXI from "pixi.js";
 import { generateTile } from "./tile";
-import { isDraggable } from "./gameLogic";
-import { GAMEOVERSTAGE_KEY } from "../index";
 
-const startBtn = document.getElementById('startBtn');
 export const generateGrid = () => {
     return [
         [-1, -1, -1, -1, -1, -1, -1, -1, -1],
@@ -22,7 +19,6 @@ export const generateGrid = () => {
     ]
 }
 
-let isDrag = false;
 export let ok = 0;
 
 export const renderMap = (x, y, grid, onClick) => {

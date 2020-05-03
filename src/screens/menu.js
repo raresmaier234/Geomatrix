@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js'
 import { generateTile } from '../logic/tile';
-import { GAMEPLAYSTAGE_KEY, GAMEOVERSTAGE_KEY, GAMEFINISHEDSTAGE_KEY } from '../index';
+import { GAMEPLAYSTAGE_KEY } from '../index';
 
 export const menuStage = (changeStage) => {
     const stage = new PIXI.Container();

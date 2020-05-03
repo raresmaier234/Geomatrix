@@ -1,6 +1,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
     mode: 'production',
     module: {
@@ -12,15 +12,6 @@ module.exports = {
             }
         }]
     },
-    optimization: {
-        minimizer: [new UglifyJSPlugin({
-            uglifyOptions: {
-                output: {
-                    comments: false //use it for removing comments like "/*! ... */"
-                }
-            }
-        })]
-    },
     plugins: [
         new CopyWebpackPlugin([{
             from: 'build/assets',
@@ -31,6 +22,6 @@ module.exports = {
             filename: 'index.html',
             hash: true,
             minify: false
-        })
+        }),
     ]
 }

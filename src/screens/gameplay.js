@@ -3,7 +3,6 @@ import { generateGrid, renderMap, ok } from '../logic/grid'
 import { generateTile } from '../logic/tile';
 import { isDraggable, isHouse, deleteNeighbours, gameOver, goBack } from '../logic/gameLogic';
 import { MENUSTAGE_KEY, GAMEPLAYSTAGE_KEY, GAMEOVERSTAGE_KEY, GAMEFINISHEDSTAGE_KEY } from '../index';
-import { menuStage } from "./menu";
 
 export const gameplayStage = (changeStage) => {
     const stage = new PIXI.Container();
@@ -13,10 +12,13 @@ export const gameplayStage = (changeStage) => {
     let _w = window.innerWidth;
     let _h = window.innerHeight;
 
+    // variabila map genereaza harta creata de noi
     const map = generateGrid();
 
+    // variabila playerClickedPiece = false, deoarece nu avem in cursor nici un pinguin
     let playerClickedPiece = false;
 
+    // lastPlayeri, lastPlayerj - pozitia (de pe orizontala si verticala) de unde am luat pinguinul
     let lastPlayeri = -1;
     let lastPlayerj = -1;
 
@@ -46,6 +48,7 @@ export const gameplayStage = (changeStage) => {
     textSample.y = _h / 2 - 360;
     stage.addChild(textSample);
 
+    //Functia de mai jos verifica actiunea fiecarui pinguin
     const onPieceClick = (i, j) => {
         let draggable = isDraggable(i, j, map);
         if (playerClickedPiece === false) {
@@ -99,9 +102,7 @@ export const gameplayStage = (changeStage) => {
         }
     }
 
-    let mapNode = renderMap(_w / 2 + 128, _h / 2, map, onPieceClick);
-
-    // modifica harta
+    //Functia modifica harta dupa fiecare mutare
     const updateMap = () => {
         stage.removeChild(stage.children[0]);
         stage.addChild(renderMap(_w / 2 + 128, _h / 2, map, onPieceClick));

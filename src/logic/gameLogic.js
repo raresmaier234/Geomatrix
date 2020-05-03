@@ -1,8 +1,16 @@
 import { MENUSTAGE_KEY, GAMEPLAYSTAGE_KEY, GAMEOVERSTAGE_KEY, GAMEFINISHEDSTAGE_KEY } from '../index';
-import { updateMap } from '../screens/gameplay';
-
 
 // verifica daca are vecin si este un spatiu liber dupa el, daca e adevarat putem lua piesa
+
+/*
+@param i - noua pozitie de pe verticala
+@param j - noua pozitie de pe orizontala
+@param lastPlayeri - pozitia de unde am luat piesa de pe verticala
+@param lastPlayerj - pozitia de unde am luat piesa de pe orizontala
+@param map - tabla de joc (matrice)
+@param changeStage - trece la finalul jocului (acea interfata care iti spune daca ai castigat sau nu)
+@param count - contorizeaza fiecare pinguin sters
+*/
 export const isDraggable = (i, j, map) => {
     let isDrag = false;
     if (map[i + 2][j] === 0)
@@ -20,7 +28,7 @@ export const isDraggable = (i, j, map) => {
     return isDrag;
 }
 
-//verificam daca se poate pune in casuta de coord i, j
+//verificam daca se poate pune in casuta de coordonate i, j
 export const isHouse = (i, j, lastPlayeri, lastPlayerj, map) => {
     let result = false;
     if (i === lastPlayeri - 2 && j === lastPlayerj)
