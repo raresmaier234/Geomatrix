@@ -17,8 +17,8 @@ export const menuStage = (changeStage) => {
 
     const image = PIXI.Texture.from('./assets/background.jpg');
     const background = new PIXI.Sprite(image);
-    background.width = 1600;
-    background.height = 900;
+    background.width = 1920;
+    background.height = 1080;
     stage.addChild(background);
     stage.addChild(tile);
     stage.addChild(info);
