@@ -15,9 +15,20 @@ export const generateTile = (x, y, image, onClick) => {
     sprite.on('mousedown', onClick);
 
     if (image === './assets/play.png' || image === './assets/playagain.png') {
-        TILE_SIZE = 128;
+        TILE_SIZE = 256;
         sprite.x = _w / 2;
         sprite.y =  _h / 2;
+        sprite.width = TILE_SIZE;
+        sprite.height = TILE_SIZE;
+        sprite.anchor.x = 0.5;
+        sprite.anchor.y = 0.5;
+    }
+    else 
+    if(image === './assets/inf.png')
+    {
+        TILE_SIZE = 128;
+        sprite.x = _w / 2 ;
+        sprite.y =  _h / 2 + 256;
         sprite.width = TILE_SIZE;
         sprite.height = TILE_SIZE;
         sprite.anchor.x = 0.5;

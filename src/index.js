@@ -3,12 +3,14 @@ import { gameplayStage } from './screens/gameplay'
 import { menuStage } from './screens/menu'
 import { gameOverStage } from './screens/gameover';
 import { gameFinishedStage } from './screens/gamefinish';
+import { infoGameStage } from './screens/infogame';
 
 //key care reprezinta scenele jocului
 export const GAMEPLAYSTAGE_KEY = "GameplayStage";
 export const MENUSTAGE_KEY = "MenuStage";
 export const GAMEOVERSTAGE_KEY = "GameOverStage";
 export const GAMEFINISHEDSTAGE_KEY = "GameFinishedStage";
+export const INFOPLAYSTAGE_KEY = "InfoGameStage";
 
 //variabila in care se pastreaza keya scenei curente
 let currentStageKey = MENUSTAGE_KEY;
@@ -22,6 +24,7 @@ export const changeStage = (stageKey) => {
     _gameplayStage = gameplayStage(changeStage);
     _gameoverStage =  gameOverStage(changeStage);
     _gameFinishedStage = gameFinishedStage(changeStage);
+    _infoGameStage = infoGameStage(changeStage);
 }
 
 //se initializeaza scenele
@@ -29,6 +32,7 @@ let _menuStage = menuStage(changeStage);
 let _gameplayStage = gameplayStage(changeStage);
 let _gameoverStage = gameOverStage(changeStage);
 let _gameFinishedStage = gameFinishedStage(changeStage);
+let _infoGameStage = infoGameStage(changeStage);
 
 const app = new PIXI.Application();
 const canvas = document.body.appendChild(app.view);
@@ -70,5 +74,8 @@ function animate() {
     }
     else if(currentStageKey === GAMEFINISHEDSTAGE_KEY) {
         renderer.render(_gameFinishedStage);
+    }
+    else if(currentStageKey === INFOPLAYSTAGE_KEY) {
+        renderer.render(_infoGameStage);
     }
 }

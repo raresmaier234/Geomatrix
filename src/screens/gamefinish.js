@@ -30,8 +30,8 @@ export const gameFinishedStage = (changeStage) => {
     winner.x = _w / 2 - 128;
     winner.y = _h / 2 + 16;
 
-    background.width = 1600;
-    background.height = 900;
+    background.width = 1920;
+    background.height = 1080;
 
     let textSample = new PIXI.Text('Score: 0', { font: 'bold italic 60px Arvo', fill: '#FFFAF0', align: 'center', stroke: 'black', strokeThickness: 7 });
     textSample.x = _w / 2 - 54;
