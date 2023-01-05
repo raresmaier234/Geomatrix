@@ -22,7 +22,7 @@
     "copy-webpack-plugin": "^5.1.1",
     "create-html": "^4.1.0",
     "geom": "^0.1.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "http-server": "^0.12.3",
     "pixi-sdf-text": "^1.0.0",
     "pixi.js": "^5.2.1",
